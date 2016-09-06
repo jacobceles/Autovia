@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<title>CarFinder</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" media="all" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
 <script>
@@ -156,7 +160,6 @@ window.onclick = function(event) {
 					</ul>
 				</article>
 			</section>
-			<p class="copy">© 2007 www.anitaicse.com</p>
 		</div>
 		<!-- / container -->
 	</footer>
@@ -166,10 +169,10 @@ window.onclick = function(event) {
 		<h2>Advanced Search</h2>
 			<div>
 
-<form>     
+<form action="product.php" method="GET">     
 <h3> Price :</h3>
 <label class="rad">
-<input type="radio" name="price" value="3">
+<input type="radio" name="price" value="3" checked="checked">
 <i></i> Below 3 Lakhs
 </label>&nbsp;
 <label class="rad">
@@ -188,15 +191,15 @@ window.onclick = function(event) {
 <br>
 <h3>Fuel Type :</h3>
 <label class="rad">
-  <input type="radio" name="price1" value="petrol" />
+  <input type="radio" name="fuel" value="petrol" checked="checked"/>
   <i></i> Petrol
 </label>&nbsp;
 <label class="rad">
-  <input type="radio" name="price1" value="diesel" />
+  <input type="radio" name="fuel" value="diesel" />
   <i></i> Diesel
 </label>&nbsp;
 <label class="rad">
-  <input type="radio" name="price1" value="cng" />
+  <input type="radio" name="fuel" value="cng" />
   <i></i> CNG
 </label>
 <br><br>
@@ -206,39 +209,39 @@ window.onclick = function(event) {
   <i></i> Ford
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="cheverolet"/>
+  <input type="checkbox" name="brand2" value="cheverolet"/>
   <i></i> Cheverolet
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="mitsubishi"/>
+  <input type="checkbox" name="brand3" value="mitsubishi"/>
   <i></i> Mitsubishi
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="maruti"/>
+  <input type="checkbox" name="brand4" value="maruthi"/>
   <i></i> Maruti
 </label>
 <br><br>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="honda"/>
+  <input type="checkbox" name="brand5" value="honda"/>
   <i></i> Honda
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="toyota"/>
+  <input type="checkbox" name="brand6" value="toyota"/>
   <i></i> Toyota
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="renault"/>
+  <input type="checkbox" name="brand7" value="renault"/>
   <i></i> Renault
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand1" value="hyundai"/>
+  <input type="checkbox" name="brand8" value="hyundai"/>
   <i></i> Hyundai
 </label>
 <br>
 <br>
 <h3> Mileage :</h3>
 <label class="rad">
-  <input type="radio" name="mile" value="10" />
+  <input type="radio" name="mile" value="10"  />
   <i></i> Less than 10
 </label>&nbsp;
 <label class="rad">
@@ -250,7 +253,7 @@ window.onclick = function(event) {
   <i></i> 14-18
 </label>&nbsp;
 <label class="rad">
-  <input type="radio" name="mile" value="22" />
+  <input type="radio" name="mile" value="22" checked="checked" />
   <i></i> 18-22
 </label>&nbsp;
 <label class="rad">
@@ -261,24 +264,24 @@ window.onclick = function(event) {
 <br>
 <h3> Type :</h3>
 <label>
-  <input type="radio" name="type"/>
+  <input type="radio" name="type" value="sedan" checked="checked"/>
   <img src="images/Sedan.png">
 </label>
 <label>
-  <input type="radio" name="type"/>
+  <input type="radio" value="SUV" name="type"/>
   <img src="images/MUVSUV.png">
 </label>
 <label>
-  <input type="radio" name="type"/>
+  <input type="radio" value="hatchback" name="type"/>
   <img src="images/Hatchback.png">
 </label>
 <label>
-  <input type="radio" name="type"/>
+  <input type="radio" value="minivan name="type"/>
   <img src="images/Minivan.png">
 </label>
 <br>
 <br>
-<a href="#" class="myButton">Filter!</a>
+<button class="myButton">Filter!</button>
 </form>
 			</div>
 

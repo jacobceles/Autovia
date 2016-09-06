@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if IE 8]> <html class="ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<title>Anita Public School</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" media="all" href="css/style.css">
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
 
@@ -81,6 +85,7 @@ window.onclick = function(event) {
 <h2><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">Send us a mail!</a></h2>
 				<br><br><hr>
 			</div>
+			<!-- / sidebar -->
 	
 		</div>
 		<!-- / container -->
@@ -111,7 +116,6 @@ window.onclick = function(event) {
 					</ul>
 				</article>
 			</section>
-			<p class="copy">© 2007 www.anitaicse.com</p>
 		</div>
 		<!-- / container -->
 	</footer>
