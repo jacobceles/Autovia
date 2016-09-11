@@ -8,7 +8,7 @@
 	<title>CarFinder</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" media="all" href="css/style2.css">
+	<link rel="stylesheet" media="all" href="css/style1.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -77,163 +77,228 @@ window.onclick = function(event) {
 	
 	</header>
 	<!-- / header -->
-<br><br><br>
+
 
 
 <?php
 require_once('inc/db.php');
-$no = $_GET['item'];
-$r=mysqli_query($db,"SELECT * FROM car WHERE no=".$no."") or die(mysql_error()); 
-$q=mysqli_fetch_array($r);
-echo "<title>".$q['name']."</title>";
-?>
-</head>
-<body>
-<script>
-function spec(evt, spec) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
+$f = 0;
+$s=0;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(spec).style.display = "block";
-    evt.currentTarget.className += " active";
+$query="SELECT * FROM car WHERE";
+if(isset($_GET['search']))
+{	
+    $i=0;
+	$search = mysqli_real_escape_string($db,$_GET['search']);
+    $terms = explode(" ",$search);
+	$query ="SELECT * FROM car WHERE ";
+    foreach ($terms as $each) {
+	$i++;
+	if($i == 1){
+		$query.="keywords LIKE '%$each%'";
+	}
+	else{
+		$query.="OR keywords LIKE '%$each%'";
+	}
 }
-</script>
-<center>
-<?php
-echo "<img src='".$q['image']."' width='640' height='480'>";
-echo '<h3>'.$q['brand'].'</h3>';
-echo '<h2>'.$q['price'].'</h2>';
+}
+else
+{
+if (isset($_GET['price']))
+{
+	$s++;
+	$price=$_GET['price'];
+	if($price==3)
+	{
+	$query=$query. " price < 300000";
+	}	
+	else if($price==7)
+	{
+	$query=$query. " price > 300000 AND price < 700000";
+	}
+	else if($price==10)
+	{
+	$query=$query. " price > 700000 AND price < 1000000";
+	}
+	else if($price==11)
+	{
+	$query=$query. " price > 1000000";
+	}
+}
+if (isset($_GET['fuel']))
+{
+	$fuel=$_GET['fuel'];
+	$query=$query." AND fuel='$fuel'";
+}
+if (isset($_GET['mile']))
+{
+	$mile=$_GET['mile'];
+}
+if (isset($_GET['type']))
+{
+	$type=$_GET['type'];
+	if($s>0)
+	{
+		$query=$query." AND type='$type'";
+	}
+	else
+	{
+    	$query=$query." type='$type'";
+    }
+}
+$query=$query. " ";
+if (isset($_GET['brand1']))
+{
+    $a=$_GET['brand1'];
+	if($f>0)
+	{
+		$query=$query." OR brand='$a'";
+	}
+	else
+	{
+		$query=$query." AND (brand='$a'";
+		$f++;
+	}
+}
+if (isset($_GET['brand2']))
+{
+	$b=$_GET['brand2'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$b'";
+	}
+	else
+	{
+		$query=$query." AND (brand='$b'";
+		$f++;
+	}
+}
+if (isset($_GET['brand3']))
+{
+	$c=$_GET['brand3'];
+	if($f>0)
+	{
+		$query=$query." OR brand='$c'";
+	}
+	else
+	{
+		$query=$query." AND (brand='$c'";
+		$f++;
+	}
+}
+if (isset($_GET['brand4']))
+{
+	$d=$_GET['brand4'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$d'";
+		
+	}
+	else
+	{
+		$query=$query." AND (brand='$d'";
+		$f++;
+	}
+}
+if (isset($_GET['brand5']))
+{
+    $e=$_GET['brand5'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$e'";
+	
+	}
+	else
+	{
+		$query=$query." AND (brand='$e'";
+		$f++;
+	}
+}
+if (isset($_GET['brand6']))
+{
+	$h=$_GET['brand6'];
+	if($f>0)
+	{
+		$query=$query." OR brand='$h'";
+	}
+	else
+	{
+		$query=$query." AND (brand='$h'";
+		$f++;
+	}
+}
+if (isset($_GET['brand7']))
+{
+	$g=$_GET['brand7'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$g'";
+		
+	}
+	else
+	{
+		$query=$query." AND (brand='$g'";
+		$f++;
+	}
+}
+
+if (isset($_GET['brand8']))
+{
+	$h=$_GET['brand8'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$h'";
+		
+	}
+	else
+	{
+		$query=$query." AND (brand='$h'";
+		$f++;
+	}
+}
+if($f>0)
+{
+	$query=$query.")";
+	
+}
+}
+//echo $query;
+$result=mysqli_query($db,$query);
+$n=mysqli_num_rows($result);
+if($n >=1)
+{        $k=0;
+        echo '<ul class="products">';
+	while($i= mysqli_fetch_assoc($result))
+	{   
+        if ($k%3 == 0) 
+        {
+     	    echo "<br><br><br>"; 
+        }
+        //echo str_repeat("&nbsp;", 10);
+        echo  '<li>';
+        echo "<img src='".$i['image']."' width='320' height='240'>";
+        echo '<h4><strong><a href="product.php?item='.$i['no'].'">'.$i['brand'].'</a></strong></h4>';
+		echo '<p><font color="orange">₹ '.$i['price'].'</font><p>';
+		echo  '</li>';
+        $k=$k+1;
+        //echo str_repeat("&nbsp;", 100);  
+		//echo '<h3>'.$i['descr'].'</h3>';
+	}	
+        echo '</ul>';
+        echo "<br>";
+}
+else
+{
+	echo "<br><br><br>"; 
+	echo "<h2><strong><font size='6'>No Results Found</font></strong></h2>";
+	echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"; 
+}
 ?>
-<ul class="tab">
-  <li><a href="#" class="tablinks" onclick="spec(event, 'details')">Details</a></li>
-  <li><a href="#" class="tablinks" onclick="spec(event, 'specifications')">Specifications</a></li>
-  <li><a href="#" class="tablinks" onclick="spec(event, 'dimensions')">Dimensions</a></li>
-</ul>
-
-<div id="details" class="tabcontent">
-  <h3>Details</h3>
-  <p>
-    <table border="1" align="center">
-	  <tr>
-	  <th> Manufacturer: </th>
-	  <td><?php echo $q['brand']; ?></td>
-	  </tr>
-	  <tr>
-	  <th> Model: </th>
-	  <td><?php echo $q['name']; ?></td>
-	  </tr>
-	  <tr>
-	  <th> Body Type: </th>
-	  <td><?php echo $q['type']; ?></td>
-	  </tr>
-	</table><br>
-  </p>
-</div>
-
-<div id="specifications" class="tabcontent">
-  <h3>Specifications</h3>
-  <p>
-	<table border="1" align="center">
-<tr>
-	<th>Fuel Type</th>
-	<td><?php echo $q['fuel']; ?></td>
-</tr>	
-<tr>
-	<th>Seat Capacity</th>
-	<td><?php echo $q['seatcapacity']; ?></td>
-</tr>
-<tr>
-	<th>Displacement</th>
-	<td><?php echo $q['displacement'];?></td>
-</tr>
-<tr>
-	<th>No Of Gears</th>
-	<td><?php echo $q['gears_no'];?></td>
-</tr>
-
-<tr>
-	<th>Mileage</th>
-	<td><?php echo $q['mileage']; ?></td>
-</tr>
-<tr>
-	<th>Front Brake Type</th>
-	<td><?php echo $q['front_brake_type']; ?></td>
-</tr>
-<tr>
-	<th>Rear Brake Type</th>
-	<td><?php echo $q['rear_brake_type']; ?></td>
-</tr>
-<tr>
-	<th>Steering Type</th>
-	<td><?php echo $q['steering_type'];?></td>
-</tr>
-<tr>
-	<th>Transmission Type</th>
-	<td><?php echo $q['transmission_type']; ?></td>
-</tr>
-<tr>
-	<th>Drive Train</th>
-	<td><?php echo $q['drive_train'];?></td>
-</tr>
-<tr>
-	<th>Fuel System</th>
-	<td><?php echo $q['fuel_system'];?></td>
-</tr>
-<tr>
-	<th>Engine Type</th>
-	<td><?php echo $q['engine_type']; ?></td>
-</tr>
-<tr>
-	<th>Cylinders</th>
-	<td><?php echo $q['cylinders'];?></td>
-</tr>
-<tr>
-	<th>Turning Radius</th>
-	<td><?php echo $q['turning_radius'];?></td>
-</tr>
-<tr>
-	<th>Max. Power</th>
-	<td><?php echo $q['max_power'];?></td>
-
-</table><br>
-  </p> 
-</div>
-
-<div id="dimensions" class="tabcontent">
-  <h3>Dimensions</h3>
-  <p>
-    <table border="1" align="center">
-    <tr>
-	<th>Ground Clearence</th>
-	<td><?php echo $q['ground_clearence'];?></td>
-</tr>
-<tr>
-	<th>Wheelbase</th>
-	<td><?php echo $q['wheelbase'];?></td>
-</tr>
-    </table><br>
-  </p>
-</div>
-
-</center>
-<br><br>
-<h3>Description</h3>
-<br>
-<h4><?php echo $q['descr'] ;?> </h4><br>
-
 
 
         

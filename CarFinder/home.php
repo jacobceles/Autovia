@@ -50,16 +50,16 @@ window.onclick = function(event) {
 			<div class="menu-trigger"></div>
 			<nav id="menu">
 				<ul>
-				    <li><a href="activities.html">Home</a></li>
+				    <li><a href="home.php">Home</a></li>
 					<li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn" style="border:none; padding: 0; background: none;"><a>Type</a></button>
   						<div id="myDropdown" class="dropdown-content">
-    					<a href="patron.html">Hatchback</a>
-    					<a href="origin.html">Sedan</a>
-   						<a href="administration.html">SUV</a>
-   						<a href="foreword.html">Mini Van</a>
-   						<a href="foreword.html">MUV</a>
+    					<a href="results.php?type=hatchback">Hatchback</a>
+    					<a href="results.php?type=sedan">Sedan</a>
+   						<a href="results.php?type=suv">SUV</a>
+   						<a href="results.php?type=minivan">Mini Van</a>
+   						<a href="results.php?type=muv">MUV</a>
   					    </div>
 					</div>
 					</li>
@@ -81,8 +81,7 @@ window.onclick = function(event) {
 			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat" >
 				<div class="container">
 					<div class="info">
-						<h2>Blah Blah<br><span>Blah Blah</span></h2>
-						<a href="#">Blah Blah</a>
+						<h2>The cars we drive say<br><span>a lot about us</span></h2>
 					</div>
 				</div>
 				<!-- / content -->
@@ -90,8 +89,7 @@ window.onclick = function(event) {
 			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat">
 				<div class="container">
 					<div class="info">
-						<h2>Blah Blah<br><span>Blah Blah</span></h2>
-						<a href="#">Blah Blah</a>
+						<h2>A car for every purse<br><span>and purpose</span></h2>
 					</div>
 				</div>
 				<!-- / content -->
@@ -99,8 +97,8 @@ window.onclick = function(event) {
 			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat">
 				<div class="container">
 					<div class="info">
-						<h2>Blah Blah<br><span>Blah Blah</span></h2>
-						<a href="#">Blah Blah</a>
+						<h2>Happiness is exploring<br><span>in your car</span></h2>
+						<!--<a href="#">More</a> -->
 					</div>
 				</div>
 				<!-- / content -->
@@ -119,7 +117,7 @@ window.onclick = function(event) {
 
 
 <div id="wrap">
-  <form action="" autocomplete="on">
+  <form action="results.php">
   <input id="search" name="search" type="text" placeholder="What're we looking for ?"><input id="search_submit" value="Rechercher" type="submit">
   </form>
 </div>
@@ -155,7 +153,7 @@ window.onclick = function(event) {
 				<article class="col-2">
 					<h3>Quick Links</h3>
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="home.php">Home</a></li>
 						<li class="last"><a href="contact.php">Contact Us</a></li>
 					</ul>
 				</article>
@@ -169,8 +167,8 @@ window.onclick = function(event) {
 		<h2>Advanced Search</h2>
 			<div>
 
-<form action="product.php" method="GET">     
-<h3> Price :</h3>
+<form action="results.php" method="GET">     
+<h3 style="font-weight:bold;"> Price :</h3>
 <label class="rad">
 <input type="radio" name="price" value="3" checked="checked">
 <i></i> Below 3 Lakhs
@@ -189,7 +187,7 @@ window.onclick = function(event) {
 </label>&nbsp;
 <br>
 <br>
-<h3>Fuel Type :</h3>
+<h3 style="font-weight:bold;">Fuel Type :</h3>
 <label class="rad">
   <input type="radio" name="fuel" value="petrol" checked="checked"/>
   <i></i> Petrol
@@ -203,7 +201,7 @@ window.onclick = function(event) {
   <i></i> CNG
 </label>
 <br><br>
-<h3> Brand :</h3>
+<h3 style="font-weight:bold;"> Brand :</h3>
 <label class="ckb">
   <input type="checkbox" name="brand1" value="ford"/>
   <i></i> Ford
@@ -239,7 +237,7 @@ window.onclick = function(event) {
 </label>
 <br>
 <br>
-<h3> Mileage :</h3>
+<h3 style="font-weight:bold;"> Mileage :</h3>
 <label class="rad">
   <input type="radio" name="mile" value="10"  />
   <i></i> Less than 10
@@ -262,7 +260,7 @@ window.onclick = function(event) {
 </label>&nbsp;
 <br>
 <br>
-<h3> Type :</h3>
+<h3 style="font-weight:bold;"> Type :</h3>
 <label>
   <input type="radio" name="type" value="sedan" checked="checked"/>
   <img src="images/Sedan.png">

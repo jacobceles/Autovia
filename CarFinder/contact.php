@@ -3,7 +3,7 @@
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>Anita Public School</title>
+	<title>CarFinder</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	<link rel="stylesheet" media="all" href="css/style.css">
 	<!--[if lt IE 9]>
@@ -53,11 +53,11 @@ window.onclick = function(event) {
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn" style="border:none; padding: 0; background: none;"><a>Type</a></button>
   						<div id="myDropdown" class="dropdown-content">
-    					<a href="patron.html">Hatchback</a>
-    					<a href="origin.html">Sedan</a>
-   						<a href="administration.html">SUV</a>
-   						<a href="foreword.html">Mini Van</a>
-   						<a href="foreword.html">MUV</a>
+    					<a href="results.php?type=hatchback">Hatchback</a>
+    					<a href="results.php?type=sedan">Sedan</a>
+   						<a href="results.php?type=suv">SUV</a>
+   						<a href="results.php?type=minivan">Mini Van</a>
+   						<a href="results.php?type=muv">MUV</a>
   					    </div>
 					</div>
 					</li>
@@ -82,9 +82,11 @@ window.onclick = function(event) {
 
 			<div class="main-content">
 				<p>A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.A group of people who wants to be the change.</p><br>
-<h2><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">Send us a mail!</a></h2>
 				<br><br><hr>
 			</div>
+			<aside id="sidebar">
+					<h2><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">Send us a mail!</a></h2>
+			</aside>
 			<!-- / sidebar -->
 	
 		</div>
@@ -111,7 +113,7 @@ window.onclick = function(event) {
 				<article class="col-2">
 					<h3>Quick Links</h3>
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="home.php">Home</a></li>
 						<li class="last"><a href="contact.php">Contact Us</a></li>
 					</ul>
 				</article>
