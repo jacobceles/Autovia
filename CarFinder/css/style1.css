@@ -154,7 +154,7 @@ input, textarea, select, button {
 
 a, a:visited, a:focus, a:active {
 	text-decoration: none;
-	color: #008bc4;
+	color: #87ceeb;
 }
 
 a:hover {
@@ -786,16 +786,7 @@ h1.single{
 	padding: 57px 0 70px 0;
 }
 
-h1,
-h2 {
-	color: #7e8798;
-	font-size: 60px;
-	font-family: 'BebasNeue';
-	line-height: 68px;
-	font-weight: 300;
-	text-align: center;
-	padding-bottom: 53px;
-}
+
 
 h1 {
 	text-align: left;
@@ -1361,7 +1352,6 @@ a.btn.blue,
 	padding: 5px 20px;
 	line-height: 24px;
 }
-
 
 
 
@@ -2219,4 +2209,13 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   opacity: 0.8;
+}
+
+ul.products li {
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 5%;
+    *display: inline;
+    *zoom: 1;
 }
