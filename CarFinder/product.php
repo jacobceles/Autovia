@@ -5,9 +5,10 @@
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>CarFinder</title>
+	<title>Autovia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+	 <link rel="shortcut icon" type="image/x-icon" href="images/ico_car.png" />
 	<link rel="stylesheet" media="all" href="css/style2.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,11 +49,11 @@ window.onclick = function(event) {
 
 	<header id="header">
 		<div class="container">
-			<a href="home.php" id="logo" title="CarFinder">CarFinder</a>
+			<a href="index.php" id="logo" title="Autovia">Autovia</a>
 			<div class="menu-trigger"></div>
 			<nav id="menu">
 				<ul>
-				    <li><a href="home.php">Home</a></li>
+				    <li><a href="index.php">Home</a></li>
 					<li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn" style="border:none; padding: 0; background: none;"><a>Type</a></button>
@@ -114,19 +115,37 @@ function spec(evt, spec) {
 <center>
 <?php
 echo "<img src='".$q['image']."' width='640' height='480'>";
-echo '<h3>'.$q['brand'].'</h3>';
-echo '<h2>'.$q['price'].'</h2>';
+//echo '<div class="event"><span><img src="images/ico_car.png" alt="car_icon" height="27" width="27"/></span><div class="info">'.$q['brand'].'</div><div class="price">'.$q['price'].'</div></div>';
+//echo '<h2><Strong>Rs. </Strong>'.$q['price'].'</h2>';
 ?>
+<br>
+<div class='clearfix'>
+  <img class='string' src='http://dalewhiteley.co.uk/working/tag-string.gif' width='62' height='54'/>
+  <div class="label">
+		<div class="front">
+      <img class='string inside' src='http://dalewhiteley.co.uk/working/tag-string-front.gif' width="25" height="13"/>
+      <p><?php echo $q['brand']?></p>
+		</div>
+		<div class="back">
+      <img class='string inside' src='http://dalewhiteley.co.uk/working/tag-string-back.gif' width="25" height="13"/>
+		  <p>Rs. <?php echo $q['price']?></p>
+	  </div>
+  </div>
+</div>
+<br><br><br><br><br>
+
 <ul class="tab">
-  <li><a href="#" class="tablinks" onclick="spec(event, 'details')">Details</a></li>
-  <li><a href="#" class="tablinks" onclick="spec(event, 'specifications')">Specifications</a></li>
-  <li><a href="#" class="tablinks" onclick="spec(event, 'dimensions')">Dimensions</a></li>
+  <li><a href="javascript:;" class="tablinks" onclick="spec(event, 'details')">Details</a></li>
+  <li><a href="javascript:;" class="tablinks" onclick="spec(event, 'specifications')">Specifications</a></li>
+  <li><a href="javascript:;" class="tablinks" onclick="spec(event, 'dimensions')">Dimensions</a></li>
 </ul>
 
 <div id="details" class="tabcontent">
-  <h3>Details</h3>
+  <h3><strong>DETAILS<strong></h3>
   <p>
-    <table border="1" align="center">
+  <div class="rwd-table">
+  <br>
+    <table cellspacing="50" align="center">
 	  <tr>
 	  <th> Manufacturer: </th>
 	  <td><?php echo $q['brand']; ?></td>
@@ -141,12 +160,15 @@ echo '<h2>'.$q['price'].'</h2>';
 	  </tr>
 	</table><br>
   </p>
+  </div>
 </div>
 
 <div id="specifications" class="tabcontent">
-  <h3>Specifications</h3>
+  <h3><strong>SPECIFICATIONS<strong></h3>
   <p>
-	<table border="1" align="center">
+  <div class="rwd-table">
+  <br>
+	<table cellspacing="50" align="center">
 <tr>
 	<th>Fuel Type</th>
 	<td><?php echo $q['fuel']; ?></td>
@@ -207,15 +229,18 @@ echo '<h2>'.$q['price'].'</h2>';
 <tr>
 	<th>Max. Power</th>
 	<td><?php echo $q['max_power'];?></td>
-
+</tr>
 </table><br>
+  </div>
   </p> 
 </div>
 
 <div id="dimensions" class="tabcontent">
-  <h3>Dimensions</h3>
+  <h3><strong>DIMENSIONS<strong></h3>
   <p>
-    <table border="1" align="center">
+  <div class="rwd-table">
+  <br>
+    <table cellspacing="50" align="center">
     <tr>
 	<th>Ground Clearence</th>
 	<td><?php echo $q['ground_clearence'];?></td>
@@ -225,12 +250,13 @@ echo '<h2>'.$q['price'].'</h2>';
 	<td><?php echo $q['wheelbase'];?></td>
 </tr>
     </table><br>
+   </div>
   </p>
 </div>
 
 </center>
 <br><br>
-<h3>Description</h3>
+<h3><strong>DESCRIPTION</strong></h3>
 <br>
 <h4><?php echo $q['descr'] ;?> </h4><br>
 
@@ -262,7 +288,7 @@ echo '<h2>'.$q['price'].'</h2>';
 				<article class="col-2">
 					<h3>Quick Links</h3>
 					<ul>
-						<li><a href="home.php">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li class="last"><a href="contact.php">Contact Us</a></li>
 					</ul>
 				</article>
@@ -383,7 +409,7 @@ echo '<h2>'.$q['price'].'</h2>';
   <img src="images/Hatchback.png">
 </label>
 <label>
-  <input type="radio" value="minivan name="type"/>
+  <input type="radio" value="minivan" name="type"/>
   <img src="images/Minivan.png">
 </label>
 <br>

@@ -5,14 +5,14 @@
 	<meta charset="utf-8">
 	<title>Autovia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-	<link rel="shortcut icon" type="image/x-icon" href="images/ico_car.png" />
+	 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+	  <link rel="shortcut icon" type="image/x-icon" href="images/ico_car.png" />
 	<link rel="stylesheet" media="all" href="css/style.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
 <body>
-
 <script>
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
@@ -40,7 +40,9 @@ window.onclick = function(event) {
     }
   }
 }
+
 </script>
+
 
 
 	<header id="header">
@@ -75,25 +77,168 @@ window.onclick = function(event) {
 	</header>
 	<!-- / header -->
 	
-	<div class="divider"></div>
-	
-	<div class="content">
-		<div class="container">
-			<h1 class="single">About Us</h1>
-
-			<div class="main-content">
-				<p align="left">Autovia is a leading online destination that helps car shoppers and owners to find their dream car. Autovia has turned into one of the largest digital automotive platforms, connecting consumers with cars across the country anytime, anywhere. Through our comprehensive set of research tools and the largest database of vehicle details in the industry, Autovia helps shoppers find a car they will love to ride.</p><br>
-				<br><br><hr>
-			</div>
-			<aside id="sidebar">
-					<h2><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">Send us a mail!</a></h2>
-			</aside>
-			<!-- / sidebar -->
-	
-		</div>
-		<!-- / container -->
+	<div class="slider">
+		<ul class="bxslider">
+			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat" >
+				<div class="container">
+					<div class="info">
+						<h2>The cars we drive say<br><span>a lot about us</span></h2>
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat">
+				<div class="container">
+					<div class="info">
+						<h2>A car for every purse<br><span>and purpose</span></h2>
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+			<li style="background-size: cover;height: 600px; background:url(images/slide1.png) no-repeat">
+				<div class="container">
+					<div class="info">
+						<h2>Happiness is exploring<br><span>in your car</span></h2>
+						<!--<a href="#">More</a> -->
+					</div>
+				</div>
+				<!-- / content -->
+			</li>
+		</ul>
+		<div class="bg-bottom"></div>
 	</div>
 	
+
+
+
+	<section class="posts">
+		<div class="container">
+
+<form action="results.php" method="GET">     
+<div id="sub-entry">
+<h3 style="font-weight:bold;"> Price :</h3>
+<label class="rad">
+<input type="radio" name="price" value="3" checked="checked">
+<i></i> Below 3 Lakhs
+</label>&nbsp;
+<label class="rad">
+<input type="radio" name="price" value="7">
+<i></i> 3 lakhs to 7 Lakhs
+</label>&nbsp;
+<label class="rad">
+<input type="radio" name="price" value="10">
+<i></i> 7 lakhs to 10 Lakhs
+</label>&nbsp;
+<label class="rad">
+<input type="radio" name="price" value="11">
+<i></i> Above 10 Lakhs
+</label>&nbsp;
+<br>
+<br>
+<h3 style="font-weight:bold;">Fuel Type :</h3>
+<label class="rad">
+  <input type="radio" name="fuel" value="petrol" checked="checked"/>
+  <i></i> Petrol
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="fuel" value="diesel" />
+  <i></i> Diesel
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="fuel" value="cng" />
+  <i></i> CNG
+</label>
+<br><br>
+<h3 style="font-weight:bold;"> Brand :</h3>
+<label class="ckb">
+  <input type="checkbox" name="brand1" value="ford"/>
+  <i></i> Ford
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand2" value="cheverolet"/>
+  <i></i> Cheverolet
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand3" value="mitsubishi"/>
+  <i></i> Mitsubishi
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand4" value="maruthi"/>
+  <i></i> Maruti
+</label>
+<br><br>
+<label class="ckb">
+  <input type="checkbox" name="brand5" value="honda"/>
+  <i></i> Honda
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand6" value="toyota"/>
+  <i></i> Toyota
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand7" value="renault"/>
+  <i></i> Renault
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand8" value="hyundai"/>
+  <i></i> Hyundai
+</label>
+</div>
+
+<div id="sub-entry">
+<h3 style="font-weight:bold;"> Mileage :</h3>
+<label class="rad">
+  <input type="radio" name="mile" value="10"  />
+  <i></i> Less than 10
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="mile" value="14" />
+  <i></i> 10-14
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="mile" value="18" />
+  <i></i> 14-18
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="mile" value="22" checked="checked" />
+  <i></i> 18-22
+</label>&nbsp;
+<label class="rad">
+  <input type="radio" name="mile" value="23" />
+  <i></i> Above 22
+</label>&nbsp;
+<br><br>
+<h3 style="font-weight:bold;"> Type :</h3>
+<label>
+  <input type="radio" name="type" value="sedan" checked="checked"/>
+  <img src="images/Sedan.png">
+</label>
+<label>
+  <input type="radio" value="SUV" name="type"/>
+  <img src="images/MUVSUV.png">
+</label>
+<label>
+  <input type="radio" value="hatchback" name="type"/>
+  <img src="images/Hatchback.png">
+</label>
+<label>
+  <input type="radio" value="minivan" name="type"/>
+  <img src="images/Minivan.png">
+</label>
+<br><br><br>
+<button class="myButton">Filter!</button>
+</div>
+</form>
+		
+		</div>
+		<!-- / container -->
+	</section>
+
+	
+
+
+	
+
 	<footer id="footer">
 		<div class="container">
 			<section>

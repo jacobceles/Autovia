@@ -5,9 +5,10 @@
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
 	<meta charset="utf-8">
-	<title>CarFinder</title>
+	<title>Autovia</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 	 <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+	 <link rel="shortcut icon" type="image/x-icon" href="images/ico_car.png" />
 	<link rel="stylesheet" media="all" href="css/style1.css">
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -48,11 +49,11 @@ window.onclick = function(event) {
 
 	<header id="header">
 		<div class="container">
-			<a href="home.php" id="logo" title="CarFinder">CarFinder</a>
+			<a href="index.php" id="logo" title="Autovia">Autovia</a>
 			<div class="menu-trigger"></div>
 			<nav id="menu">
 				<ul>
-				    <li><a href="home.php">Home</a></li>
+				    <li><a href="index.php">Home</a></li>
 					<li>
 					<div class="dropdown">
 						<button onclick="myFunction()" class="dropbtn" style="border:none; padding: 0; background: none;"><a>Type</a></button>
@@ -327,7 +328,7 @@ else
 				<article class="col-2">
 					<h3>Quick Links</h3>
 					<ul>
-						<li><a href="home.php">Home</a></li>
+						<li><a href="index.php">Home</a></li>
 						<li class="last"><a href="contact.php">Contact Us</a></li>
 					</ul>
 				</article>
@@ -448,7 +449,7 @@ else
   <img src="images/Hatchback.png">
 </label>
 <label>
-  <input type="radio" value="minivan name="type"/>
+  <input type="radio" value="minivan" name="type"/>
   <img src="images/Minivan.png">
 </label>
 <br>
