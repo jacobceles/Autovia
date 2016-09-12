@@ -2220,12 +2220,10 @@ ul.tab {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
 }
 
 /* Float the list items side by side */
-ul.tab li {float: left;}
+ul.tab li {display: inline;}
 
 /* Style the links inside the list items */
 ul.tab li a {
@@ -2236,6 +2234,12 @@ ul.tab li a {
     text-decoration: none;
     transition: 0.3s;
     font-size: 17px;
+    background-color: #488cc8;
+
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    margin-bottom: 3px;
 }
 
 /* Change background color of links on hover */
@@ -2264,4 +2268,208 @@ ul.tab li a:focus, .active {background-color: #ccc;}
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+
+
+
+
+
+@import 'http://fonts.googleapis.com/css?family=Montserrat:300,400,700';
+
+body {
+  padding: 0 2em;
+  font-family: Montserrat, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: #444;
+  background: #eee;
+}
+
+h3 {
+  font-weight: normal;
+  letter-spacing: -1px;
+  color: #34495E;
+}
+
+th {
+    color: #dd5;
+  }
+
+td {
+    color: #eee;
+  }
+
+th, td {
+    text-align: left;
+    
+    @media (min-width: $breakpoint-alpha) {
+
+      display: table-cell;
+      padding: .25em .5em;
+      
+      &:first-child {
+        padding-left: 0;
+      }
+      
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+}
+
+.rwd-table {
+  background: #34495E;
+  color: #fff;
+  border-radius: .4em;
+  over
+  flow: hidden;
+}
+
+tr {
+    border-color: lighten(#34495E, 10%);
+  }
+
+
+
+
+
+/* latin */
+@font-face {
+  font-family: 'Gochi Hand';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Gochi Hand'), local('GochiHand-Regular'), url(http://fonts.gstatic.com/s/gochihand/v7/ZZzTGmufF-Wq8IS3fkpBu_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.string{
+ float:left;
+  display:block;
+  margin-left: 50%;
+}
+
+.string.inside{
+  position:absolute;
+  z-index:99;
+  margin:14px 0 0 -36px;
+}
+
+.label {
+  width: 90px;
+  display:block;
+  float:left;
+  margin:25px 0 0 31px;
+  position: relative;
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+}
+
+.label P{
+  margin:.55em;
+  padding-top:.25em;
+  font-family: 'Gochi Hand';
+  font-weight:bold;
+  color:#444;
+  font-size: 1em;
+  position:relative;
+  z-index:999;
+}
+
+.label .front:before, .label .back:before { 
+  content : ''; 
+  position: absolute; 
+  left: -14px; 
+  top: 5px; 
+  width: 28px; 
+  height: 28px; 
+  border: 1px solid #666; 
+  border-radius: 2px; 
+  border-top-width: 0; 
+  border-right-width: 0; 
+  -webkit-transform: rotate(45deg); 
+  -moz-transform: rotate(45deg); 
+  -o-transform: rotate(45deg); 
+  transform: rotate(45deg);
+}
+
+.label .front:before, .label .back:before, .label .front, .label .back{
+  /*Background Colour*/
+  background: #FAFAFA;  
+}
+
+.label .front:after, .label .back:after { 
+  content: ''; 
+  position: absolute; 
+  left: -10px; 
+  top: 14px; 
+  width: 8px; 
+  height: 8px; 
+  border: 1px solid #797B7B; 
+  border-radius: 10px; 
+}
+
+.label .front, .label .back {
+  float: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: inherit;
+    height: inherit;
+    text-align: right;
+  padding:0 5px;
+  border: 1px solid #666; 
+  border-radius: 2px; 
+  border-left-width: 0; 
+  
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -webkit-transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform-style: preserve-3d;
+    -moz-backface-visibility: hidden;
+  
+    -o-transition: all .4s ease-in-out;
+    -ms-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+    
+.label .front,.label .front,.label .back{
+  -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.9);
+}
+
+/* -- X axis rotation for tag -- */
+.label:hover .front {
+  -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+}
+
+.label .back {
+  cursor: pointer;
+    -webkit-transform: rotateX(-180deg);
+    -moz-transform: rotateX(-180deg);
+}
+
+.label:hover .back, .label .front  {
+  -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
 }
