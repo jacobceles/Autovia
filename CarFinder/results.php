@@ -69,7 +69,7 @@ window.onclick = function(event) {
  				</ul>
 				<ul>
 				    <li><a href="#fancy" class="get-contact">Search</a></li>
-					<li><a href="contact.php">Contact Us</a></li>
+					<li><a href="contact.php">About Us</a></li>
    				</ul>
 			</nav>
 			<!-- / navigation -->
@@ -126,14 +126,34 @@ if (isset($_GET['price']))
 	$query=$query. " price > 1000000";
 	}
 }
+if (isset($_GET['mile']))
+{
+	$mile=$_GET['mile'];
+	if($mile==10)
+	{
+	$query=$query. " AND mileage < 10";
+	}	
+	else if($mile==14)
+	{
+	$query=$query. " AND mileage > 10 AND mileage < 14";
+	}
+	else if($mile==18)
+	{
+	$query=$query. " AND mileage > 14 AND mileage < 18";
+	}
+	else if($mile==22)
+	{
+	$query=$query. " AND mileage > 18 AND mileage < 22";
+	}
+	else if($mile==23)
+	{
+	$query=$query. " AND mileage > 22";
+	}
+}
 if (isset($_GET['fuel']))
 {
 	$fuel=$_GET['fuel'];
 	$query=$query." AND fuel='$fuel'";
-}
-if (isset($_GET['mile']))
-{
-	$mile=$_GET['mile'];
 }
 if (isset($_GET['type']))
 {
@@ -268,7 +288,7 @@ if($f>0)
 	
 }
 }
-//echo $query;
+
 $result=mysqli_query($db,$query);
 $n=mysqli_num_rows($result);
 if($n >=1)
@@ -280,15 +300,12 @@ if($n >=1)
         {
      	    echo "<br><br><br>"; 
         }
-        //echo str_repeat("&nbsp;", 10);
         echo  '<li>';
         echo "<img src='".$i['image']."' width='320' height='240'>";
-        echo '<h4><strong><a href="product.php?item='.$i['no'].'">'.$i['brand'].'</a></strong></h4>';
+        echo '<h4><strong><a href="product.php?item='.$i['no'].'">'.$i['brand'].'&nbsp;'.$i['name'].'</a></strong></h4>';
 		echo '<p><font color="orange">₹ '.$i['price'].'</font><p>';
 		echo  '</li>';
         $k=$k+1;
-        //echo str_repeat("&nbsp;", 100);  
-		//echo '<h3>'.$i['descr'].'</h3>';
 	}	
         echo '</ul>';
         echo "<br>";
@@ -314,8 +331,8 @@ else
 				<article class="col-1">
 					<h3>Contact</h3>
 					<ul>
-						<li class="address"><a href="#">CompanyName<br>Kolenchery, India, 683550</a></li>
-						<li class="mail"><a href="#">CompanyName@gmail.com</a></li>
+						<li class="address"><a href="#">Autovia<br>Kolenchery, India, 683550</a></li>
+						<li class="mail"><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">autovia@gmail.com</a></li>
 						<li class="phone last"><a href="#">(+91) 8281170010</a></li>
 					</ul>
 				</article>
@@ -329,7 +346,7 @@ else
 					<h3>Quick Links</h3>
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="last"><a href="contact.php">Contact Us</a></li>
+						<li class="last"><a href="contact.php">About Us</a></li>
 					</ul>
 				</article>
 			</section>
@@ -345,11 +362,11 @@ else
 <form action="results.php" method="GET">     
 <h3 style="font-weight:bold;"> Price :</h3>
 <label class="rad">
-<input type="radio" name="price" value="3" checked="checked">
+<input type="radio" name="price" value="3">
 <i></i> Below 3 Lakhs
 </label>&nbsp;
 <label class="rad">
-<input type="radio" name="price" value="7">
+<input type="radio" name="price" value="7" checked="checked">
 <i></i> 3 lakhs to 7 Lakhs
 </label>&nbsp;
 <label class="rad">
@@ -364,7 +381,7 @@ else
 <br>
 <h3 style="font-weight:bold;">Fuel Type :</h3>
 <label class="rad">
-  <input type="radio" name="fuel" value="petrol" checked="checked"/>
+  <input type="radio" name="fuel" value="petrol"/>
   <i></i> Petrol
 </label>&nbsp;
 <label class="rad">
@@ -391,7 +408,7 @@ else
 </label>
 <label class="ckb">
   <input type="checkbox" name="brand4" value="maruthi"/>
-  <i></i> Maruti
+  <i></i> Maruthi
 </label>
 <br><br>
 <label class="ckb">
@@ -426,7 +443,7 @@ else
   <i></i> 14-18
 </label>&nbsp;
 <label class="rad">
-  <input type="radio" name="mile" value="22" checked="checked" />
+  <input type="radio" name="mile" value="22" />
   <i></i> 18-22
 </label>&nbsp;
 <label class="rad">
@@ -437,7 +454,7 @@ else
 <br>
 <h3 style="font-weight:bold;"> Type :</h3>
 <label>
-  <input type="radio" name="type" value="sedan" checked="checked"/>
+  <input type="radio" name="type" value="sedan"/>
   <img src="images/Sedan.png">
 </label>
 <label>

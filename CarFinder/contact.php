@@ -65,7 +65,7 @@ window.onclick = function(event) {
  				</ul>
 				<ul>
 				    <li><a href="#fancy" class="get-contact">Search</a></li>
-					<li><a href="contact.php">Contact Us</a></li>
+					<li><a href="contact.php">About Us</a></li>
    				</ul>
 			</nav>
 			<!-- / navigation -->
@@ -100,8 +100,8 @@ window.onclick = function(event) {
 				<article class="col-1">
 					<h3>Contact</h3>
 					<ul>
-						<li class="address"><a href="#">CompanyName<br>Kolenchery, India, 683550</a></li>
-						<li class="mail"><a href="#">CompanyName@gmail.com</a></li>
+						<li class="address"><a href="#">Autovia<br>Kolenchery, India, 683550</a></li>
+						<li class="mail"><a href="mailto:jacobceles@gmail.com?Subject=Enquiry%20from%20site" target="_top">autovia@gmail.com</a></li>
 						<li class="phone last"><a href="#">(+91) 8281170010</a></li>
 					</ul>
 				</article>
@@ -115,7 +115,7 @@ window.onclick = function(event) {
 					<h3>Quick Links</h3>
 					<ul>
 						<li><a href="index.php">Home</a></li>
-						<li class="last"><a href="contact.php">Contact Us</a></li>
+						<li class="last"><a href="contact.php">About Us</a></li>
 					</ul>
 				</article>
 			</section>
@@ -131,11 +131,11 @@ window.onclick = function(event) {
 <form action="results.php" method="GET">     
 <h3 style="font-weight:bold;"> Price :</h3>
 <label class="rad">
-<input type="radio" name="price" value="3" checked="checked">
+<input type="radio" name="price" value="3">
 <i></i> Below 3 Lakhs
 </label>&nbsp;
 <label class="rad">
-<input type="radio" name="price" value="7">
+<input type="radio" name="price" value="7" checked="checked">
 <i></i> 3 lakhs to 7 Lakhs
 </label>&nbsp;
 <label class="rad">
@@ -150,7 +150,7 @@ window.onclick = function(event) {
 <br>
 <h3 style="font-weight:bold;">Fuel Type :</h3>
 <label class="rad">
-  <input type="radio" name="fuel" value="petrol" checked="checked"/>
+  <input type="radio" name="fuel" value="petrol"/>
   <i></i> Petrol
 </label>&nbsp;
 <label class="rad">
@@ -212,7 +212,7 @@ window.onclick = function(event) {
   <i></i> 14-18
 </label>&nbsp;
 <label class="rad">
-  <input type="radio" name="mile" value="22" checked="checked" />
+  <input type="radio" name="mile" value="22" />
   <i></i> 18-22
 </label>&nbsp;
 <label class="rad">
@@ -223,7 +223,7 @@ window.onclick = function(event) {
 <br>
 <h3 style="font-weight:bold;"> Type :</h3>
 <label>
-  <input type="radio" name="type" value="sedan" checked="checked"/>
+  <input type="radio" name="type" value="sedan"/>
   <img src="images/Sedan.png">
 </label>
 <label>
