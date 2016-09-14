@@ -114,7 +114,7 @@ function spec(evt, spec) {
 </script>
 <center>
 <?php
-echo "<img src='".$q['image']."' width='640' height='480'>";
+echo "<img src='img/".$q['image']."' width='640' height='480'>";
 //echo '<div class="event"><span><img src="images/ico_car.png" alt="car_icon" height="27" width="27"/></span><div class="info">'.$q['brand'].'</div><div class="price">'.$q['price'].'</div></div>';
 //echo '<h2><Strong>Rs. </Strong>'.$q['price'].'</h2>';
 ?>
@@ -350,7 +350,7 @@ echo "<img src='".$q['image']."' width='640' height='480'>";
   <i></i> Mitsubishi
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand4" value="maruthi"/>
+  <input type="checkbox" name="brand4" value="maruti"/>
   <i></i> Maruti
 </label>
 <br><br>
@@ -363,12 +363,16 @@ echo "<img src='".$q['image']."' width='640' height='480'>";
   <i></i> Toyota
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand7" value="renault"/>
-  <i></i> Renault
+  <input type="checkbox" name="brand7" value="volkswagen"/>
+  <i></i> Volkswagen
 </label>
 <label class="ckb">
   <input type="checkbox" name="brand8" value="hyundai"/>
   <i></i> Hyundai
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand9" value="fiat"/>
+  <i></i> Fiat
 </label>
 <br>
 <br>

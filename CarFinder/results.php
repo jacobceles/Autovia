@@ -282,6 +282,21 @@ if (isset($_GET['brand8']))
 		$f++;
 	}
 }
+if (isset($_GET['brand9']))
+{
+	$j=$_GET['brand9'];
+	
+	if($f>0)
+	{
+		$query=$query." OR brand='$j'";
+		
+	}
+	else
+	{
+		$query=$query." AND (brand='$j'";
+		$f++;
+	}
+}
 if($f>0)
 {
 	$query=$query.")";
@@ -301,7 +316,7 @@ if($n >=1)
      	    echo "<br><br><br>"; 
         }
         echo  '<li>';
-        echo "<img src='".$i['image']."' width='320' height='240'>";
+        echo "<img src='img/".$i['image']."' width='320' height='240'>";
         echo '<h4><strong><a href="product.php?item='.$i['no'].'">'.$i['brand'].'&nbsp;'.$i['name'].'</a></strong></h4>';
 		echo '<p><font color="orange">₹ '.$i['price'].'</font><p>';
 		echo  '</li>';
@@ -407,8 +422,8 @@ else
   <i></i> Mitsubishi
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand4" value="maruthi"/>
-  <i></i> Maruthi
+  <input type="checkbox" name="brand4" value="maruti"/>
+  <i></i> Maruti
 </label>
 <br><br>
 <label class="ckb">
@@ -420,12 +435,16 @@ else
   <i></i> Toyota
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand7" value="renault"/>
-  <i></i> Renault
+  <input type="checkbox" name="brand7" value="volkswagen"/>
+  <i></i> Volkswagen
 </label>
 <label class="ckb">
   <input type="checkbox" name="brand8" value="hyundai"/>
   <i></i> Hyundai
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand9" value="fiat"/>
+  <i></i> Fiat
 </label>
 <br>
 <br>

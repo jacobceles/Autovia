@@ -176,7 +176,7 @@ window.onclick = function(event) {
   <i></i> Mitsubishi
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand4" value="maruthi"/>
+  <input type="checkbox" name="brand4" value="maruti"/>
   <i></i> Maruti
 </label>
 <br><br>
@@ -189,12 +189,16 @@ window.onclick = function(event) {
   <i></i> Toyota
 </label>
 <label class="ckb">
-  <input type="checkbox" name="brand7" value="renault"/>
-  <i></i> Renault
+  <input type="checkbox" name="brand7" value="volkswagen"/>
+  <i></i> Volkswagen
 </label>
 <label class="ckb">
   <input type="checkbox" name="brand8" value="hyundai"/>
   <i></i> Hyundai
+</label>
+<label class="ckb">
+  <input type="checkbox" name="brand9" value="fiat"/>
+  <i></i> Fiat
 </label>
 <br>
 <br>
