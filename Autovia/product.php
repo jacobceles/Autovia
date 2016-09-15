@@ -62,7 +62,6 @@ window.onclick = function(event) {
     					<a href="results.php?type=sedan">Sedan</a>
    						<a href="results.php?type=suv">SUV</a>
    						<a href="results.php?type=minivan">Mini Van</a>
-   						<a href="results.php?type=muv">MUV</a>
   					    </div>
 					</div>
 					</li>
